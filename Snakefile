@@ -1,12 +1,18 @@
 import os
+from snakemake.utils import validate
+
+configfile: "config/config.yaml"
+validate( config, schema="schemas/config.schema.yaml" )
 
 output_dir = config["out_dir"]
-input_dir = config["in_dir"]
+
+REGIONS = config["regions"].split( " " )
 
 rule all:
     input:
-        auspice_json = expand( os.path.join( output_dir, "auspice/ncov_{region}.json" ), region=REGIONS ),
-        tip_frequency = expand( os.path.join( output_dir, "auspice/ncov_{region}_tip-frequencies.json" ), regions=REGIONS )
+        os.path.join( output_dir, "results/filtered.fasta" )
+        #auspice_json = expand( os.path.join( output_dir, "auspice/ncov_{region}.json" ), region=REGIONS ),
+        #tip_frequency = expand( os.path.join( output_dir, "auspice/ncov_{region}_tip-frequencies.json" ), region=REGIONS )
 
 rule clean:
     message: "Removing directories: {params}"
@@ -17,12 +23,12 @@ rule clean:
         "rm -rfv {params}"
 
 rule update:
-    message: "Download data from SEARCH git repository"
+    message: "Pull sequences from SEARCH repository, rename, and combine input"
     output:
-        sequences = config["sequences"]
-        metadata = config["metadata"]
+        sequences = "data/sequences.fasta",
+        metadata = "data/metadata.tsv"
     shell:
-        "download stuff or something, idk"
+        "python3 scripts/combine_data.py --search data/ --gmetadata data/metadata_2020-05-27_16-12.tsv --gseqs data/sequences_2020-05-27_16-12.fasta"
 
 rule filter:
     message:
@@ -32,12 +38,12 @@ rule filter:
          - minimum genome length of {params.min_length}
         """
     input:
-        sequences = rules.download.output.sequences,
-        metadata = rules.download.output.metadata,
-        include = config["filter"]["include"],
-        exclude = config["filter"]["exclude"]
+        sequences = rules.update.output.sequences,
+        metadata = rules.update.output.metadata,
+        include = config["files"]["include"],
+        exclude = config["files"]["exclude"]
     output:
-        results = os.path.join( output_dir, "results/filtered.fasta" )
+        sequences = os.path.join( output_dir, "results/filtered.fasta" )
     log:
         os.path.join( output_dir, "logs/filtered.txt" )
     params:
@@ -59,6 +65,22 @@ rule filter:
             --output {output.sequences} 2>&1 | tee {log}
         """
 
+checkpoint partition_sequences:
+    input:
+        sequences = rules.filter.output.sequences
+    output:
+        split_sequences = directory( os.path.join( output_dir, "results/split_sequences/" ) ) 
+    log:
+        os.path.join( output_dir, "logs/partition_sequences.txt" )
+    params:
+        sequences_per_group = config["partition_sequences"]["sequences_per_group"]
+    shell:
+        """
+        python3 scripts/partition-sequences.py \
+            --sequences {input.sequences} \
+            --sequences-per-group {params.sequences_per_group} \
+            --output-dir {output.split_sequences} 2>&1 | tee {log}
+        """
 
 rule align:
     message:
@@ -68,20 +90,43 @@ rule align:
         Cluster:  {wildcards.cluster}
         """
     input:
-        sequences = rules.filter.output.results,
+        sequences = "results/split_sequences/{cluster}.fasta",
         reference = config["files"]["reference"]
     output:
-        alignment = os.path.join( output_dir, "results/alignment.fasta"
+        alignment = os.path.join( output_dir, "results/split_alignments/{cluster}.fasta" )
+    threads: 2
     log:
-        os.path.join( output_dir, "logs/align.txt" )
+        os.path.join( output_dir, "logs/align_{cluster}.txt" )
     shell:
         """
         augur align \
             --sequences {input.sequences} \
             --reference-sequence {input.reference} \
             --output {output.alignment} \
+            --nthreads {threads} \
             --remove-reference 2>&1 | tee {log}
         """
+
+
+def _get_alignments(wildcards):
+    checkpoint_output = checkpoints.partition_sequences.get(**wildcards).output[0]
+    return expand( os.path.join( output_dir, "results/split_alignments/{i}.fasta" ),
+                  i=glob_wildcards(os.path.join(checkpoint_output, "{i}.fasta") ).i )
+
+
+rule aggregate_alignments:
+    message: "Collecting alignments"
+    input:
+        alignments = _get_alignments
+    output:
+        alignment = os.path.join( output_dir, "results/aligned.fasta" )
+    log:
+        os.path.join( output_dir, "logs/aggregate_alignments.txt" )
+    shell:
+        """
+        cat {input.alignments} > {output.alignment} 2> {log}
+        """
+
 
 rule mask:
     message:
@@ -108,14 +153,44 @@ rule mask:
         """
 
 
+def _get_subsampling_settings( wildcards ):
+    subsampling_settings = config["subsampling"]
+    
+    if hasattr( wildcards, "subsample" ):
+        return subsampling_settings[wildcards.subsample]
+    else:
+        return subsampling_settings
+
+
+
+rule adjust_metadata_regions:
+    message:
+        """
+        Adjusting metadata for build '{wildcards.region}'
+        """
+    input:
+        metadata = rules.update.output.metadata
+    output:
+        metadata = os.path.join( output_dir, "results/{region}/metadata_adjusted.tsv" )
+    log:
+        os.path.join( output_dir, "logs/{region}.adjust_metadata_regions.txt" )
+    shell:
+        """
+        {python:q} scripts/adjust_regional_meta.py \
+            --region {wildcards.region:q} \
+            --metadata {input.metadata} \
+            --output {output.metadata} 2>&1 | tee {log}
+        """
+
+
 rule tree:
     message: "Building tree"
     input:
         alignment = rules.mask.output.alignment
     output:
-        tree = os.path.join( output_dir, "results/tree_raw.nwk" )
+        tree = os.path.join( output_dir, "results/{region}/tree_raw.nwk" )
     log:
-        os.path.join( output_dir, "logs/tree.txt" )
+        os.path.join( output_dir, "logs/{region}.tree.txt" )
     shell:
         """
         augur tree \
@@ -136,12 +211,12 @@ rule refine:
     input:
         tree = rules.tree.output.tree,
         alignment = rules.mask.output.alignment,
-        metadata = rules.download.output.metadata
+        metadata = rules.update.output.metadata
     output:
-        tree = os.path.join( output_dir, "tree.nwk" ),
-        node_data = os.path.join( output_dir, "branch_lengths.json" )
+        tree = os.path.join( output_dir, "results/{region}/tree.nwk" ),
+        node_data = os.path.join( output_dir, "results/{region}/branch_lengths.json" )
     log:
-        os.path.join( output_dir, "logs/refine.txt" )
+        os.path.join( output_dir, "logs/{region}.refine.txt" )
     params:
         root = config["refine"]["root"],
         clock_rate = config["refine"]["clock_rate"],
@@ -181,9 +256,9 @@ rule ancestral:
         tree = rules.refine.output.tree,
         alignment = rules.mask.output.alignment
     output:
-        node_data = os.path.join( output_dir, "nt_muts.json" )
+        node_data = os.path.join( output_dir, "results/{region}/nt_muts.json" )
     log:
-        os.path.join( output_dir, "logs/ancestral.txt" )
+        os.path.join( output_dir, "logs/{region}.ancestral.txt" )
     params:
         inference = config["ancestral"]["inference"]
     shell:
@@ -202,9 +277,9 @@ rule haplotype_status:
     input:
         nt_muts = rules.ancestral.output.node_data
     output:
-        node_data = os.path.join( output_dir, "haplotype_status.json" )
+        node_data = os.path.join( output_dir, "results/{region}/haplotype_status.json" )
     log:
-        os.path.join( output_dir, "logs/haplotype_status.txt" )
+        os.path.join( output_dir, "logs/{region}.haplotype_status.txt" )
     params:
         reference_node_name = config["reference_node_name"]
     shell:
@@ -223,9 +298,9 @@ rule translate:
         node_data = rules.ancestral.output.node_data,
         reference = config["files"]["reference"]
     output:
-        node_data = os.path.join( output_dir, "aa_muts.json" )
+        node_data = os.path.join( output_dir, "results/{region}/aa_muts.json" )
     log:
-        os.path.join( output_dir, "logs/translate.txt" )
+        os.path.join( output_dir, "logs/{region}.translate.txt" )
     shell:
         """
         augur translate \
@@ -236,6 +311,18 @@ rule translate:
         """
 
 
+def _get_metadata_by_region( region ):
+    if region == "global":
+        return rules.update.output.metadata
+    else:
+        return rules.adjust_metadata_regions.output.metadata
+
+def _get_exposure_trait_for_wildcards( wildcards ):
+    if wildcards.region in config["exposure"]:
+        return config["exposure"][wildcards.region]["trait"]
+    else:
+        return config["exposure"]["default"]["trait"]
+
 rule traits:
     message:
         """
@@ -244,11 +331,11 @@ rule traits:
         """
     input:
         tree = rules.refine.output.tree,
-        metadata = _get_metadata_by_wildcards
+        metadata = _get_metadata_by_region
     output:
-        node_data = os.path.join( output_dir, "traits.json" )
+        node_data = os.path.join( output_dir, "results/{region}/traits.json" )
     log:
-        os.path.join( output_dir, "logs/traits_{region}.txt" )
+        os.path.join( output_dir, "logs/{region}.traits.txt" )
     params:
         columns = _get_exposure_trait_for_wildcards,
         sampling_bias_correction = config["traits"]["sampling_bias_correction"]
@@ -271,9 +358,9 @@ rule clades:
         nuc_muts = rules.ancestral.output.node_data,
         clades = config["files"]["clades"]
     output:
-        clade_data = os.path.join( output_dir, "clades.json" )
+        clade_data = os.path.join( output_dir, "results/{region}/clades.json" )
     log:
-        os.path.join( output_dir, "logs/clades.txt" )
+        os.path.join( output_dir, "logs/{region}.clades.txt" )
     shell:
         """
         augur clades --tree {input.tree} \
@@ -288,11 +375,11 @@ rule colors:
     input:
         ordering = config["files"]["ordering"],
         color_schemes = config["files"]["color_schemes"],
-        metadata = _get_metadata_by_wildcards
+        metadata = _get_metadata_by_region
     output:
-        colors = os.path.join( output_dir, "config/colors.tsv" )
+        colors = os.path.join( output_dir, "results/{region}/colors.tsv" )
     log:
-        os.path.join( output_dir, "logs/colors_{region}.txt" )
+        os.path.join( output_dir, "logs/{region}.colors.txt" )
     shell:
         """
         python3 scripts/assign-colors.py \
@@ -306,11 +393,11 @@ rule colors:
 rule recency:
     message: "Use metadata on submission date to construct submission recency field"
     input:
-        metadata = _get_metadata_by_wildcards
+        metadata = _get_metadata_by_region
     output:
-        os.path.join( output_dir, "recency.json" )
+        os.path.join( output_dir, "results/{region}/recency.json" )
     log:
-        os.path.join( output_dir, "logs/recency.txt" )
+        os.path.join( output_dir, "logs/{region}.recency.txt" )
     shell:
         """
         python3 scripts/construct-recency-from-submission-date.py \
@@ -323,17 +410,16 @@ rule tip_frequencies:
     message: "Estimating censored KDE frequencies for tips"
     input:
         tree = rules.refine.output.tree,
-        metadata = _get_metadata_by_wildcards
+        metadata = _get_metadata_by_region
     output:
-        tip_frequencies_json = os.path.join( output_dir, "auspice/ncov_tip-frequencies.json" )
+        tip_frequencies_json = os.path.join( output_dir, "auspice/ncov_{region}_tip-frequencies.json" )
     log:
-        os.path.join( output_dir, "logs/tip_frequencies.txt" )
+        os.path.join( output_dir, "logs/{region}.tip_frequencies.txt" )
     params:
         min_date = config["frequencies"]["min_date"],
         pivot_interval = config["frequencies"]["pivot_interval"],
         narrow_bandwidth = config["frequencies"]["narrow_bandwidth"],
         proportion_wide = config["frequencies"]["proportion_wide"]
-    conda: config["conda_environment"]
     shell:
         """
         augur frequencies \
@@ -352,7 +438,7 @@ rule export:
     message: "Exporting data files for for auspice"
     input:
         tree = rules.refine.output.tree,
-        metadata = _get_metadata_by_wildcards,
+        metadata = _get_metadata_by_region,
         branch_lengths = rules.refine.output.node_data,
         nt_muts = rules.ancestral.output.node_data,
         aa_muts = rules.translate.output.node_data,
@@ -364,9 +450,9 @@ rule export:
         clades = rules.clades.output.clade_data,
         recency = rules.recency.output
     output:
-        auspice_json = os.path.join( output_dir, "ncov_with_accessions.json" )
+        auspice_json = os.path.join( output_dir, "auspice/ncov_{region}.json" )
     log:
-        os.path.join( output_dir, "logs/export.txt" )
+        os.path.join( output_dir, "logs/{region}.export.txt" )
     params:
         title = "Global epidemiology of novel coronavirus - SEARCH"
     shell:

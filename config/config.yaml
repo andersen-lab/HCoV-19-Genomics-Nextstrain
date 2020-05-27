@@ -7,6 +7,15 @@
 sequences: "data/sequences.fasta"
 metadata: "data/metadata.tsv"
 
+# These are the regions of interest for SEARCH portal
+regions: "Jordan California"
+
+# This refers to the output location.
+out_dir: "/gpfs/home/natem/scripts/HCoV-19-Genomics-Nextstrain"
+
+# Unclear the significance of this. Is the haplotype even import relative to some washington sample?
+reference_node_name: "USA/WA1/2020"
+
 # Define files used for external configuration. Common examples consist of a
 # list of strains to include and exclude from analyses, a reference sequence to
 # align sequences to, colors for strain attributes in auspice, and auspice
@@ -48,16 +57,8 @@ partition_sequences:
 
 # Mask settings determine how the multiple sequence alignment is masked prior to phylogenetic inference.
 mask:
-  # Number of bases to mask from the beginning and end of the alignment. These regions of the genome
-  # are difficult to sequence accurately.
-  mask_from_beginning: 100
-  mask_from_end: 50
-
-  # Specific sites to mask in the reference genome's coordinates.
-  # These are 1-indexed coordinates of sites that have been identified as prone to sequencing errors.
-  # 13402, 24389 and 24390 are restricted to Belgian samples
-  mask_sites: "13402 24389 24390"
-
+    mask: "config/mask.bed"
+ 
 # TreeTime settings
 refine:
   root: "Wuhan-Hu-1/2019 Wuhan/WH01/2019"
