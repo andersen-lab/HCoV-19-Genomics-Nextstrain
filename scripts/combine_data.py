@@ -11,18 +11,17 @@ count = 1
 
 def get_SEARCH_name( entry, dedup=False ):
     name = list()
-    name.append( entry["country"] )
+    name.append( entry["country_abv"] )
     locations = entry[["division","location"]].to_list()
     locations = [str(i) for i in locations] 
     if "nan" in locations: locations.remove( "nan" )
     if "?" in locations: locations.remove( "?" )
-    locations = [i.replace( " ", "" ) for i in locations]
-    locations = [i.replace( "'", "" ) for i in locations]
     name.append( "-".join( locations ) )
     name.append( entry["accession"] )
     name.append( str( entry["date"] ) )
     new_name = "/".join( name )
-    
+    new_name = new_name.replace( " ", "" )
+    new_name = new_name.replace( "'", "" )
     if dedup:
         if new_name in used_names:
             print( "{} already used".format( new_name ) )
@@ -48,7 +47,7 @@ if __name__ == "__main__":
     gisaid_md = pd.read_csv( args.gmetadata, delimiter="\t" )
     gisaid_md["accession"] = gisaid_md["genbank_accession"]
     gisaid_md.loc[gisaid_md["genbank_accession"]=="?","accession"] = gisaid_md["strain"].apply( lambda x : x.replace( "/", "" ) ) 
-    gisaid_md["country"] = coco.convert( names=gisaid_md["country"].to_list(), to="ISO3" )
+    gisaid_md["country_abv"] = coco.convert( names=gisaid_md["country"].to_list(), to="ISO3" )
     gisaid_md["name"] = gisaid_md["strain"]
     gisaid_md = gisaid_md.fillna( "?" ) 
     # Remove non-ascii characters where present.
@@ -97,14 +96,13 @@ if __name__ == "__main__":
 
     # cleanup location
     search_md.loc[search_md["location"].isnull(),"location"] = "?"
-    search_md["location"] = search_md["location"].str.replace( " ", "" )
 
     # cleanup country
-    search_md["country"] = coco.convert( names=search_md["country"].to_list(), to="ISO3" )
+    search_md["country_abv"] = coco.convert( names=search_md["country"].to_list(), to="ISO3" )
 
     # Determine Region
     search_md["region"] = "North America"
-    search_md.loc[search_md["country"]=="JOR","region"] = "Asia"
+    search_md.loc[search_md["country"]=="Jordan","region"] = "Asia"
 
     search_md = search_md.rename(columns={"ID":"accession", 
                                           "collection_date": "date", 

@@ -11,10 +11,13 @@ builds:
     region: North America
     country: USA
     division: California
+    title: "Genomic epidemiology of novel coronavirus - California focused subsampling"
+
   usa_california_sandiego:
     subsampling_scheme: location
     geographic_scale: location
     region: North America
     country: USA
     division: California
-    location: SanDiego
+    location: San Diego
+    title: "Genomic epidemiology of novel coronavirus - San Diego County focused subsampling"

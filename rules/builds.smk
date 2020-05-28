@@ -530,13 +530,10 @@ def export_title(wildcards):
     # TODO: maybe we could replace this with a config entry for full/human-readable build name?
     location_name = wildcards.build_name
 
-    if not location_name:
-        return "Genomic epidemiology of novel coronavirus"
-    elif location_name == "global":
-        return "Genomic epidemiology of novel coronavirus - Global subsampling"
+    if "title" in config["builds"][location_name]:
+        return config["builds"][location_name]["title"]
     else:
-        location_title = location_name.replace("-", " ").title()
-        return f"Genomic epidemiology of novel coronavirus - {location_title}-focused subsampling"
+        return "Genomic epidemiology of novel coronavirus"
 
 def _get_node_data_by_wildcards(wildcards):
     """Return a list of node data files to include for a given build's wildcards.
