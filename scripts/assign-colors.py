@@ -18,7 +18,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     assignment = {}
-    with open(args.ordering) as f:
+    with open(args.ordering, errors="replace" ) as f:
         for line in f.readlines():
             array = line.lstrip().rstrip().split("\t")
             if len(array) == 2:

@@ -9,7 +9,7 @@ import unicodedata
 used_names = list()
 count = 1
 
-def get_SEARCH_name( entry ):
+def get_SEARCH_name( entry, dedup=False ):
     name = list()
     name.append( entry["country"] )
     locations = entry[["division","location"]].to_list()
@@ -23,10 +23,11 @@ def get_SEARCH_name( entry ):
     name.append( str( entry["date"] ) )
     new_name = "/".join( name )
     
-    if new_name in used_names:
-        new_name = new_name + "/" + count
-        count += 1
-    used_names.append( new_name )
+    if dedup:
+        if new_name in used_names:
+            print( "{} already used".format( new_name ) )
+            return "bad_name"
+        used_names.append( new_name )
 
     return new_name
 
@@ -46,10 +47,18 @@ if __name__ == "__main__":
 
     gisaid_md = pd.read_csv( args.gmetadata, delimiter="\t" )
     gisaid_md["accession"] = gisaid_md["genbank_accession"]
-    gisaid_md.loc[gisaid_md["genbank_accession"]=="?","accession"] = gisaid_md["strain"].apply( lambda x : x.split( "/" )[1] ) 
+    gisaid_md.loc[gisaid_md["genbank_accession"]=="?","accession"] = gisaid_md["strain"].apply( lambda x : x.replace( "/", "" ) ) 
     gisaid_md["country"] = coco.convert( names=gisaid_md["country"].to_list(), to="ISO3" )
     gisaid_md["name"] = gisaid_md["strain"]
-    gisaid_md["strain"] = gisaid_md.apply( get_SEARCH_name, axis=1 )
+    gisaid_md = gisaid_md.fillna( "?" ) 
+    # Remove non-ascii characters where present.
+    for i in gisaid_md.columns:
+        try:
+            gisaid_md[i] = gisaid_md[i].apply( lambda val: unicodedata.normalize( 'NFKD', val ).encode( 'ascii', 'ignore' ).decode() )
+        except TypeError:
+            continue
+
+    gisaid_md["strain"] = gisaid_md.apply( get_SEARCH_name, axis=1, dedup=True )
 
     gisaid_md["strain"] = gisaid_md["strain"].apply(lambda val: unicodedata.normalize('NFKD', val).encode('ascii', 'ignore').decode())
 
@@ -81,7 +90,7 @@ if __name__ == "__main__":
 
     gisaid_md = gisaid_md.set_index( "name" )
 
-    search_md = pd.read_csv( os.path.join( args.search, "metadata.csv" ) )
+    search_md = pd.read_csv( os.path.join( args.search, "metadata.csv" ), encoding="ascii" )
 
     # Determine Country, division, and location
     search_md[["country","division", "location"]] = search_md["location"].str.split( "/", expand=True )
@@ -154,17 +163,20 @@ if __name__ == "__main__":
 
     search_seqs = list()
     search_ids = list()
+    with open( "config/include.txt", "w" ) as include:
+        for file in files:
+            name = str( file.split( "." )[0] )
+            seq = SeqIO.read( os.path.join( search_location, file ), "fasta" )
+            seq.id = search_md.loc[name,"strain"]
+            search_ids.append( search_md.loc[name,"gisaid_epi_isl"] )
+            seq.description = ""
+            seq.name = ""
+            search_seqs.append( seq )
 
-    for file in files:
-        name = str( file.split( "." )[0] )
-        seq = SeqIO.read( os.path.join( search_location, file ), "fasta" )
-        seq.id = search_md.loc[name,"strain"]
-        search_ids.append( search_md.loc[name,"gisaid_epi_isl"] )
-        seq.description = ""
-        seq.name = ""
-        search_seqs.append( seq )
+            search_md.loc[name,"length"] = len( seq.seq )
 
-        search_md.loc[name,"length"] = len( seq.seq )
+            if "unknown" not in search_md.loc[name,"strain"]:
+                include.write( search_md.loc[name,"strain"] + "\n" )
 
     gisaid_seqs = list( SeqIO.parse( args.gseqs, "fasta" ) )
 
@@ -177,6 +189,10 @@ if __name__ == "__main__":
             ent = gisaid_md.loc[seq.name]
         except KeyError:
             print( "Unable to find: {}".format( seq.name ) )
+            continue
+
+        if ent["strain"] == "bad_name":
+            count += 1
             continue
 
         if ent["gisaid_epi_isl"] in search_ids:
@@ -195,7 +211,7 @@ if __name__ == "__main__":
     print( "{} sequences already in dataset.".format( count ) ) 
 
     combined_md = pd.concat( [search_md.reset_index( drop=True ), append_md], ignore_index=True )
-    combined_md.to_csv( os.path.join( args.search, "metadata.tsv" ), index=False, sep="\t" )
+    combined_md.to_csv( os.path.join( args.search, "metadata.tsv" ), index=False, sep="\t", encoding="ascii" )
 
     SeqIO.write( search_seqs, os.path.join( args.search, "sequences.fasta" ), "fasta" )
 

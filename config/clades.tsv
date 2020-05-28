@@ -1,5 +1,6 @@
 clade	gene	site	alt
 
+
 A1a	ORF3a	251	V
 A1a	ORF1a	3606	F
 
@@ -11,7 +12,11 @@ A3	ORF1a	3606	F
 
 A6	nuc	514	C
 
+
 A7	ORF1a	3220	V
+
+
+
 
 B	ORF8	84	S
 

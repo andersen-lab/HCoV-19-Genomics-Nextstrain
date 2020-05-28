@@ -1,19 +1,16 @@
+
 # This file contains defaults for the "config" object used in the Snakefile.
 # To temporarily override or provide a value, you can use snakemake's --config
 # or --configfile options.
 ---
+# conda environment file to use by default
+
+# S3 and slack options are related to Nextstrain live builds and don't need to be modified for local builds
 
 # These are the two main starting files for the run
 sequences: "data/sequences.fasta"
 metadata: "data/metadata.tsv"
 
-# These are the regions of interest for SEARCH portal
-regions: "Jordan California"
-
-# This refers to the output location.
-out_dir: "/gpfs/home/natem/scripts/HCoV-19-Genomics-Nextstrain"
-
-# Unclear the significance of this. Is the haplotype even import relative to some washington sample?
 reference_node_name: "USA/WA1/2020"
 
 # Define files used for external configuration. Common examples consist of a
@@ -57,11 +54,19 @@ partition_sequences:
 
 # Mask settings determine how the multiple sequence alignment is masked prior to phylogenetic inference.
 mask:
-    mask: "config/mask.bed"
- 
+  # Number of bases to mask from the beginning and end of the alignment. These regions of the genome
+  # are difficult to sequence accurately.
+  mask_from_beginning: 55
+  mask_from_end: 100
+
+  # Specific sites to mask in the reference genome's coordinates.
+  # These are 1-indexed coordinates of sites that have been identified as prone to sequencing errors.
+  # 13402, 24389 and 24390 are restricted to Belgian samples
+  mask_sites: "635 2091 2094 3145 3564 4050 5736 6869 8022 8790 10129 11074 11083 11535 13402 13408 13476 13571 14277 15922 16887 19484 21575 22335 24389 24390 24933 26549 29037 29553"
+
 # TreeTime settings
 refine:
-  root: "Wuhan-Hu-1/2019 Wuhan/WH01/2019"
+  root: "CHN/Hubei-Wuhan/MN908947/2019-12-26 CHN/Hubei-Wuhan/LR757998/2019-12-26"
   clock_rate: 0.0008
   clock_std_dev: 0.0004
   coalescent: "skyline"
@@ -71,9 +76,6 @@ refine:
 
 ancestral:
   inference: "joint"
-
-traits:
-  sampling_bias_correction: 2.5
 
 # Frequencies settings
 frequencies:
@@ -86,3 +88,148 @@ frequencies:
   narrow_bandwidth: 0.05
   proportion_wide: 0.0
 
+#
+# Region-specific settings
+#
+traits:
+  default:
+    sampling_bias_correction: 2.5
+    columns: ["region_exposure", "country_exposure"]
+
+exposure:
+  default:
+    trait: "country"
+    exposure: "country_exposure"
+
+# Default subsampling schemes designed for different geographic scales. With the
+# exception of the "global" region, most subsampling schemes define a large
+# focal set of sequences related to a specific geographic entity (e.g., Africa,
+# Switzerland, etc.) and a smaller set of contextual sequences from the rest of
+# the world.
+#
+# Users can control the specificity of subsampling by defining as many
+# subsampling sets as they require. For example, one may wish to include all
+# sequences from California, many contextual sequences from the USA, and a few
+# contextual sequences from the rest of the world.
+#
+# Each build defines its subsampling scheme by specifying a `subsampling_scheme`
+# attribute whose value is the name of an entry in the subsampling configuration
+# below or defined elsewhere in another configuration file.
+subsampling:
+  # Default subsampling logic for regions
+  region:
+    # Focal samples for region
+    region:
+      group_by: "division year month"
+      seq_per_group: 96
+      exclude: "--exclude-where 'region!={region}'"
+    # Contextual samples for region from the rest of the world
+    global:
+      group_by: "country year month"
+      seq_per_group: 10
+      exclude: "--exclude-where 'region={region}'"
+      priorities:
+        type: "proximity"
+        focus: "region"
+
+  # Custom subsampling logic for global region.
+  region_global:
+    global:
+      group_by: "division year month"
+      seq_per_group: 14
+
+  # Custom subsampling logic for regions like Europe where grouping by country
+  # is the smallest resolution required.
+  region_grouped_by_country:
+    # Focal samples for region
+    region:
+      group_by: "country year month"
+      seq_per_group: 120
+      exclude: "--exclude-where 'region!={region}'"
+    # Contextual samples for region from the rest of the world
+    global:
+      group_by: "country year month"
+      seq_per_group: 12
+      exclude: "--exclude-where 'region={region}'"
+      priorities:
+        type: "proximity"
+        focus: "region"
+
+  # Default subsampling logic for countries
+  country:
+    # Focal samples for country
+    country:
+      group_by: "division year month"
+      seq_per_group: 200
+      exclude: "--exclude-where 'country!={country}'"
+    # Contextual samples from country's region
+    region:
+      group_by: "country year month"
+      seq_per_group: 20
+      exclude: "--exclude-where 'country={country}' 'region!={region}'"
+      priorities:
+        type: "proximity"
+        focus: "country"
+    # Contextual samples from the rest of the world,
+    # excluding the current region to avoid resampling.
+    global:
+      group_by: "country year month"
+      seq_per_group: 10
+      exclude: "--exclude-where 'region={region}'"
+      priorities:
+        type: "proximity"
+        focus: "country"
+
+  # Default subsampling logic for divisions
+  division:
+    # Focal samples for division
+    division:
+      group_by: "year month"
+      seq_per_group: 300
+      exclude: "--exclude-where 'region!={region}' 'country!={country}' 'division!={division}'"
+    # Contextual samples from division's country
+    country:
+      group_by: "division year month"
+      seq_per_group: 20
+      exclude: "--exclude-where 'region!={region}' 'country!={country}' 'division={division}'"
+      priorities:
+        type: "proximity"
+        focus: "division"
+    # Contextual samples from division's region
+    region:
+      group_by: "country year month"
+      seq_per_group: 10
+      exclude: "--exclude-where 'region!={region}' 'country={country}'"
+      priorities:
+        type: "proximity"
+        focus: "division"
+    # Contextual samples from the rest of the world, excluding the current
+    # division to avoid resampling.
+    global:
+      group_by: "country year month"
+      seq_per_group: 5
+      exclude: "--exclude-where 'region={region}'"
+      priorities:
+        type: "proximity"
+        focus: "division"
+
+  # Default subsampling logic for locations
+  location:
+    # Focal samples for location
+    focal:
+      group_by: "year month"
+      seq_per_group: 300
+      exclude: "--exclude-where 'region!={region}' 'country!={country}' 'division!={division}' 'location!={location}'"
+    # Samples that are genetically related to the focal samples
+    related:
+      group_by: "country year month"
+      seq_per_group: 20
+      exclude: "--exclude-where 'location={location}'"
+      priorities:
+        type: "proximity"
+        focus: "focal"
+    # Contextual samples from the rest of the world
+    contextual:
+      group_by: "country year month"
+      seq_per_group: 10
+      exclude: "--exclude-where 'location={location}'"

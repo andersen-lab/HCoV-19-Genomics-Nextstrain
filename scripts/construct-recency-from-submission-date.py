@@ -38,6 +38,11 @@ if __name__ == '__main__':
 
     for strain, d in meta.items():
         if 'date_submitted' in d:
+            if "/" in d["date_submitted"]:
+                d["date_submitted"] = d["date_submitted"].split( "/" )[0]
+            elif d["date_submitted"] == "Unknown":
+                continue
+            
             node_data['nodes'][strain] = {'recency': get_recency(d['date_submitted'], ref_date)}
 
     with open(args.output, 'wt') as fh:
