@@ -13,7 +13,7 @@ builds:
     division: California
     title: "Genomic epidemiology of novel coronavirus - California focused subsampling"
 
-  usa_california_sandiego:
+  usa_sandiego:
     subsampling_scheme: location
     geographic_scale: location
     region: North America
