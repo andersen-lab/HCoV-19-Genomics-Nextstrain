@@ -12,8 +12,6 @@ python = sys.executable or "python3"
 # Identify builds from config file
 BUILD_NAMES = list(config["builds"].keys())
 
-print( config["builds"]["usa_california"]["title"] )
-
 # Define patterns we expect for wildcards.
 wildcard_constraints:
     # Allow build names to contain alpha characters, underscores, and hyphens

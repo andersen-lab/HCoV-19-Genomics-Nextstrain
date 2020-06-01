@@ -18,10 +18,9 @@ reference_node_name: "USA/WA1/2020"
 # align sequences to, colors for strain attributes in auspice, and auspice
 # configuration files.
 files:
-  include: "config/include.txt"
+  include: "config/sd_include.txt"
   exclude: "config/exclude.txt"
   reference: "config/reference.gb"
-  outgroup: "config/outgroup.fasta"
   ordering: "config/ordering.tsv"
   color_schemes: "config/color_schemes.tsv"
   auspice_config: "config/auspice_config.json"
