@@ -14,12 +14,12 @@ We analyzed 3383 publicly available hCoV-19 genomes from around the world. 149 o
 
 
 Table of Contents:  
-1. [Data Generation](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=2)
-2. [Preliminary Analysis](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=3)
-2. [Estimating number of introductions](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=4)
-3. [Estimating source of introductions](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=6)
-4. [Estimating timing of introductions](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=7)
-5. [Scientific Credit](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=8)
+1. [Data Generation](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=2).
+2. [Preliminary Analysis](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=3).
+2. [Estimating number of introductions](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=4).
+3. [Estimating source of introductions](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=6).
+4. [Estimating timing of introductions](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=7).
+5. [Scientific Credit](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=8).
 
 # [Data Generation](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/usa/sandiego?c=region&d=tree&f_location=San%20Diego&legend=open&onlyPanels&p=full&sidebar=closed)
 The 149 sequences from San Diego and the rest of the sequences prepared by the SEARCH Alliance, highlighted to the right, were generated using an amplicon-based sequencing scheme using [PrimalSeq](https://www.nature.com/articles/nprot.2017.066) with [artic nCoV-2019 scheme](https://github.com/artic-network/artic-ncov2019/tree/master/primer_schemes/nCoV-2019).  
@@ -76,6 +76,6 @@ On the graph, we can see that introductions start to occur around mid January an
 **Andersen Lab**  
 The Scripps Research Institute  
 La Jolla, CA, USA  
-[data@andersen-lab.com](mailto:data@andersen-lab.com)
+[data@andersen-lab.com](mailto:data@andersen-lab.com).
 
 
