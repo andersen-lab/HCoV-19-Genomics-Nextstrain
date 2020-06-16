@@ -26,7 +26,7 @@ Sequences from San Diego and the rest of the sequences prepared by the SEARCH Al
 <br><br>
 Nanopore data was processed using the [artic-nCoV2019 pipeline](https://github.com/artic-network/artic-ncov2019) with [minimap2](https://github.com/lh3/minimap2) and [medaka](https://github.com/nanoporetech/medaka).  
 <br><br>
-Illumina data was processed using [iVar](https://github.com/andersen-lab/ivar) ([Grubaguh et al. Genome Biology 2019](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-018-1618-7)) with [bwa](https://github.com/lh3/bwa).  
+Illumina data was processed using [iVar](https://github.com/andersen-lab/ivar) ([Grubaugh et al. Genome Biology 2019](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-018-1618-7)) with [bwa](https://github.com/lh3/bwa).  
 <br><br>
 All consensus sequences will be deposited on GISAID and on NCBI under BioProject ID [PRJNA612578](https://www.ncbi.nlm.nih.gov/bioproject/612578). Raw read files for both Illumina and Oxford Nanopore data are available on:  
 * [Google Cloud](https://console.cloud.google.com/storage/browser/andersen-lab_hcov-19-genomics).  
@@ -46,15 +46,15 @@ Looking broadly at the tree, San Diego colored as blue and everything else color
 
 
 # [Estimating number of introductions](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/usa/sandiego?c=focal&d=tree&f_location=San%20Diego&label=clade:Z1&legend=closed&m=div&onlyPanels&p=full&sidebar=closed)
-If we zoom in on one of the larger clades we can see just how numerous the introductions are. Within this clade we can estimate that there are at least 40 separate introductions. Many of these introductions are likely singletons; we have no evidence they persistent and cause transmission chains. This is consistent with what we know about SARS-CoV-2, that only a small proportion of introductions progress to large transmission lineages. However, an alternative and equally likely explaination is that we have just failed to adequate sample these transmission chains again. We are at the moment sequencing more samples from San Diego to investigate this further.  
+If we zoom in on one of the larger clades we can see just how numerous the introductions are. Many of these introductions are likely singletons; we have no evidence they persisted to cause further transmission. This is consistent with what we know about SARS-CoV-2, that only a small proportion of introductions progress to large transmission lineages. However, an alternative and equally likely explaination is that we have just failed to adequate sample these transmission chains again. We are at the moment sequencing more samples from San Diego to investigate this further.  
 
 
 # [Estimating source of introductions](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/usa/sandiego?c=region&d=tree&p=full&sidebar=closed&legend=closed&onlyPanels&label=clade:Z2)
-We can also estimate where these introductions came from. Due to the lack of diversity in the tree, this is difficult to determine for a lot of introductions. However, we can estimate the introduction source based on where similar sequences were found before we sampled them in San Diego. For the clade on the right and in a majority of introductions across the entire tree, San Diego sequences appear to originate from a variety of locations within European diversity. This is in contrast to some other countries where SARS-CoV-2 was directly introduced from China.  
+We can also estimate where these introductions came from. Due to the lack of diversity in the tree, this is difficult to determine for a lot of introductions. However, we can estimate the introduction source based on where similar sequences were found before we sampled them in San Diego. For the clade on the right and in a majority of introductions across the entire tree, San Diego sequences appear to originate from a variety of locations within European clades. This is in contrast to some other countries where SARS-CoV-2 was directly introduced from China.  
 <br><br>
-However, it is fair to say that both internation and national importation play a role in the epidemic in San Diego as we also see introductions from elsewhere in the United States. Currently there is only evidence for spread from other California and West Coast locations.  
+However, it is fair to say that both international and national importation play a role in the epidemic in San Diego as we also see introductions from elsewhere in the United States. Currently there is only evidence for spread from other California and West Coast locations.  
 <br><br>
-It is important to consider that this tree is quite undersampled, especially in the United States. Lack of samples from other states hinders our ability to determine the source of SARS-CoV-2 introductions into San Diego definitively as we might have not yet sampled the intermediate sequences. This is a potential explaination for the observation that a majority of San Diego sequences fall within European diversity, despite the fact that national travel into San Diego far outweights international travel into San Diego.  
+It is important to consider that this tree is quite undersampled, especially in the United States. A lack of samples from other states hinders our ability to determine the source of SARS-CoV-2 introductions into San Diego definitively as we might have not yet sampled the intermediate sequences. This is a potential explaination for the observation that a majority of San Diego sequences fall within European diversity, despite the fact that national travel into San Diego far outweights international travel into San Diego.  
 
 
 # [Estimating timing of introductions](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/usa/sandiego)
@@ -62,8 +62,8 @@ Lastly, we can estimate with the time-resolved phylogeny that the vast majority 
 
 ```auspiceMainDisplayMarkdown
 <img src="https://raw.githubusercontent.com/andersen-lab/HCoV-19-Genomics-Nextstrain/master/img/introductions_filterd.png" alt="Introductions into San Diego">
-<br>
-**Figure 1** Plot showing the estimated number of SARS-CoV-2 introductions into San Diego over the course of the pandemic. Date of introduction is defined as the point estimate of the time of the most recent common ancestor of each detected San Diego transmission lineage. The number of datapoints in the figure is less than the number of introductions into the county because the date of introuduction was estimated from transmission lineages which excludes singletons.
+<br><br>
+Figure 1. Plot showing the estimated number of SARS-CoV-2 introductions into San Diego over the course of the pandemic. Date of introduction is defined as the point estimate of the time of the most recent common ancestor of each detected San Diego transmission lineage. The number of datapoints in the figure is less than the number of introductions into the county because the date of introuduction was estimated from transmission lineages which excludes singletons.
 ```  
 
 # [Scientific Credit](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/usa/sandiego?c=region&d=map&label=clade:Z1&legend=closed&onlyPanels&p=full&sidebar=closed)
