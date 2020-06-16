@@ -62,7 +62,7 @@ Lastly, we can estimate with the time-resolved phylogeny that the vast majority 
 
 ```auspiceMainDisplayMarkdown
 <img src="https://raw.githubusercontent.com/andersen-lab/HCoV-19-Genomics-Nextstrain/master/img/introductions_filterd.png" alt="Introductions into San Diego">
-<br><br>
+<br clear="all"><br>
 Figure 1. Plot showing the estimated number of SARS-CoV-2 introductions into San Diego over the course of the pandemic. Date of introduction is defined as the point estimate of the time of the most recent common ancestor of each detected San Diego transmission lineage. The number of datapoints in the figure is less than the number of introductions into the county because the date of introuduction was estimated from transmission lineages which excludes singletons.
 ```  
 
