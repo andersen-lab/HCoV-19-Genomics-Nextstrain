@@ -12,13 +12,14 @@ abstract: "In order to slow the spread of COVID-19 in our community, the SEARCH 
 
 We analyzed 3615 publicly available SARS-CoV-2 genomes from around the world. 185 of the sequences were sequenced by the SEARCH Alliance from samples collected from individuals in San Diego county between March 3rd and May 19th. In this report, we highlight the sequencing results and a few conclusions drawn from a maximum likelihood based phylogenetic analysis  
 <br><br>
-Table of Contents:  
+**Table of Contents**:  
 1. [Data Generation](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=2).
 2. [Preliminary Analysis](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=3).
-2. [Estimating number of introductions](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=4).
-3. [Estimating source of introductions](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=6).
-4. [Estimating timing of introductions](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=7).
-5. [Scientific Credit](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=8).
+3. [Extensive introductions into San Diego County](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=4).
+3. [Persistent transmission chains are rare](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=5).
+4. [Majority of introductions arise from European clades](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=6).
+5. [Introductions peaked in early March](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=7).
+6. [Scientific Credit](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=8).
 
 
 # [Data Generation](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/usa/sandiego?c=region&d=tree&f_location=San%20Diego&legend=open&onlyPanels&p=full&sidebar=closed)
@@ -39,17 +40,17 @@ The pipeline used to generate this build is based on the [ncov pipeline](https:/
 Briefly, sequences and metadata were collected from both our repository and [GISAID](https://gisaid.org/). Genomes which were short, incomplete, too divergent, and/or had incomplete metadata were removed from the dataset. We aligned the remaining genomes to reference genome MN908947, and masked problematic sites, based on the following [post](https://virological.org/t/issues-with-sars-cov-2-sequencing-data/473), from the alignment. The alignment was then subsampled to provide context for San Diego county sequences and to reduce the computational burden of the analysis. We then generated a phylogenetic tree from the alignment using [IQ-TREE](http://www.iqtree.org/) and a time-resolved phylogeny using [TreeTime](https://github.com/neherlab/treetime). Certain geographic traits and nucleotide substitutions were then reconstructed using [Augur](https://github.com/nextstrain/augur).  
 
 
-# [Estimating number of introductions](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/usa/sandiego?c=focal&d=tree&f_location=San%20Diego&p=full&sidebar=closed&legend=closed)
-To estimate the number of introductions we infered the value of a two-state character (San Diego vs. non-San Diego) for each node in the phylogenetic tree. We then count the number of times a transmission lineage changes from non-San Diego to San Diego as the number of introductions present in the tree. Polytomies containing both San Diego and non-San Diego genomes were conservatively set as non-San Diego and any San Diego genomes which fell on the node were labeled as independent introductions. 
+# [Extensive introductions into San Diego County](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/usa/sandiego?c=focal&d=tree&f_location=San%20Diego&p=full&sidebar=closed&legend=closed)
+We infered the value of a two-state character (San Diego vs. non-San Diego) for each node in the phylogenetic tree to estimate the SARS-CoV-2 introductions. We then count the number of times a transmission lineage changes from non-San Diego to San Diego as the number of introductions present in the tree. Polytomies containing both San Diego and non-San Diego genomes were conservatively set as non-San Diego and any San Diego genomes which fell on the node were labeled as independent introductions. 
 <br><br>
 Looking broadly at the tree, San Diego colored as blue and everything else colored as orange, we can see the San Diego epidemic comprises a very larger number of introductions spread across the tree.  
 
 
-# [Estimating number of introductions](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/usa/sandiego?c=focal&d=tree&f_location=San%20Diego&label=clade:Z1&legend=closed&m=div&onlyPanels&p=full&sidebar=closed)
-If we zoom in on one of the larger clades we can see just how numerous the introductions are. Many of these introductions are likely singletons; we have no evidence they persisted to cause further transmission. This is consistent with what we know about SARS-CoV-2, that only a small proportion of introductions progress to large transmission lineages. However, an alternative and equally likely explaination is that we have just failed to adequate sample these transmission chains again. We are at the moment sequencing more samples from San Diego to investigate this further.  
+# [Persistent transmission chains are rare](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/usa/sandiego?c=focal&d=tree&f_location=San%20Diego&label=clade:Z1&legend=closed&m=div&onlyPanels&p=full&sidebar=closed)
+If we zoom in on one of the larger clades we can see just how numerous the introductions are. Many of these introductions are likely singletons; we have no evidence they persisted to cause further transmission. This is consistent with what we know about SARS-CoV-2, that only a small proportion of introductions progress to large transmission lineages. However, an alternative and equally likely explaination is that we have just failed to adequately sample these transmission chains again. We are, at the moment, sequencing more samples from San Diego to investigate this further.  
 
 
-# [Estimating source of introductions](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/usa/sandiego?c=region&d=tree&p=full&sidebar=closed&legend=closed&onlyPanels&label=clade:Z2)
+# [Majority of introductions arise from European clades](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/usa/sandiego?c=region&d=tree&p=full&sidebar=closed&legend=closed&onlyPanels&label=clade:Z2)
 We can also estimate where these introductions came from. Due to the lack of diversity in the tree, this is difficult to determine for a lot of introductions. However, we can estimate the introduction source based on where similar sequences were found before we sampled them in San Diego. For the clade on the right and in a majority of introductions across the entire tree, San Diego sequences appear to originate from a variety of locations within European clades. This is in contrast to some other countries where SARS-CoV-2 was directly introduced from China.  
 <br><br>
 However, it is fair to say that both international and national importation play a role in the epidemic in San Diego as we also see introductions from elsewhere in the United States. Currently there is only evidence for spread from other California and West Coast locations.  
@@ -57,15 +58,16 @@ However, it is fair to say that both international and national importation play
 It is important to consider that this tree is quite undersampled, especially in the United States. A lack of samples from other states hinders our ability to determine the source of SARS-CoV-2 introductions into San Diego definitively as we might have not yet sampled the intermediate sequences. This is a potential explaination for the observation that a majority of San Diego sequences fall within European diversity, despite the fact that national travel into San Diego far outweights international travel into San Diego.  
 
 
-# [Estimating timing of introductions](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/usa/sandiego)
+# [Introductions peaked in early March](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/usa/sandiego)
 Lastly, we can estimate with the time-resolved phylogeny that the vast majority of introductions occured between late February and early March (Figure 1 to the right). On the graph, we can see that introductions start to occur around late January and consistently occured throughout March and into April. We can also see that while introductions did not stop, they do seem to have peaked in early March, coinciding with the state-wide stay-at-home order by Governor Newsom on March 19th, and the barring of entry to foreigh nationals on March 20th.  
 
 ```auspiceMainDisplayMarkdown
 <img src="https://raw.githubusercontent.com/andersen-lab/HCoV-19-Genomics-Nextstrain/master/img/introductions_filterd.png" alt="Introductions into San Diego">
-<br clear="all">
+<br clear="all">  
 
-
+<p>
 Figure 1. Plot showing the estimated number of SARS-CoV-2 introductions into San Diego over the course of the pandemic. Date of introduction is defined as the point estimate of the time of the most recent common ancestor of each detected San Diego transmission lineage. The number of datapoints in the figure is less than the number of introductions into the county because the date of introuduction was estimated from transmission lineages which excludes singletons.
+</p>
 ```  
 
 # [Scientific Credit](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/usa/sandiego?c=region&d=map&label=clade:Z1&legend=closed&onlyPanels&p=full&sidebar=closed)
