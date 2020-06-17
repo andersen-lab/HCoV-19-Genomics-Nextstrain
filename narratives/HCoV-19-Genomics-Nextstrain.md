@@ -62,13 +62,30 @@ Lastly, we can estimate with the time-resolved phylogeny that the vast majority 
 
 ```auspiceMainDisplayMarkdown
 <img src="https://raw.githubusercontent.com/andersen-lab/HCoV-19-Genomics-Nextstrain/master/img/introductions_filterd.png" alt="Introductions into San Diego">
-<br clear="all"><br>
+<br clear="all">
+
+
 Figure 1. Plot showing the estimated number of SARS-CoV-2 introductions into San Diego over the course of the pandemic. Date of introduction is defined as the point estimate of the time of the most recent common ancestor of each detected San Diego transmission lineage. The number of datapoints in the figure is less than the number of introductions into the county because the date of introuduction was estimated from transmission lineages which excludes singletons.
 ```  
 
 # [Scientific Credit](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/usa/sandiego?c=region&d=map&label=clade:Z1&legend=closed&onlyPanels&p=full&sidebar=closed)
 
 We would like to acknowledge the amazing and timely work done by all of our collaborators:
+<br><br>
+**San Diego Partners**<br>
+[SEARCH Alliance, San Diego](https://searchcovid.info/).
+<br><br>
+**San Diego County Public Health Laboratory**<br>
+Tracy Basler, Jovan Shephard, Brett Austin
+<br><br>
+**UCSD – Center for Advanced Laboratory Medicine**<br>
+Jenny Shin, David Pride
+<br><br>
+**Rady Children Hospital, San Diego**<br>
+Christina Clarke, Michelle Vanderpool, Teresa Mueller, Denise Malicki
+<br><br>
+**Scripps Health, San Diego**<br>
+Michael Quigley
 <br><br>
 **New Orleans**<br>
 Allison Smither, Gilberto Sabino-Santos, Patricia Snarski, Lilia Melnik, Antoinette Bell, Kaylynn Genemaras, Arnaud Drouin, Dahlene Fusco, Robert Garry
@@ -79,21 +96,13 @@ Jeremy Kamil, Vaughn Cooper
 **Jordan**<br>
 Issa Abu-Dayyeh, Ahmad Tibi, Lama Hussein, Lina Mohammad, Zein Naber, Amid Abdelnour with SEARCH Alliance San Diego
 <br><br>
-**Rady Children Hospital, San Diego**<br>
-Christina Clarke, Michelle Vanderpool, Teresa Mueller, Denise Malicki
-<br><br>
-**Scripps Health, San Diego**<br>
-Michael Quigley
-<br><br>
 **Analysis Partners**<br>
 Marc Suchard, UCLA
 Lauren Gardner, Johns Hopkins
 Philippe Lemey, KU Leuven
 Alexander Watts & Kamran Khan, BlueDot
 Emma Hodcroft, Nextstrain
-<br><br>
-**San Diego Partners**<br>
-SEARCH Alliance, San Diego
+
 <br><br>
 **Disclaimer**. Please note that this data is still based on work in progress and should be considered preliminary. If you intend to include any of these data in publications, please let us know – otherwise please feel free to download and use without restrictions. We have shared this data with the hope that people will download and use it, as well as scrutinize it so we can improve our methods and analyses. Please contact us if you have any questions or comments – we’ll buy beers for #ResearchParasites that spot flaws and faults in the data and come up with improvements!
 
