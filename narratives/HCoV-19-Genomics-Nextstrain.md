@@ -92,10 +92,10 @@ Christina Clarke, Michelle Vanderpool, Teresa Mueller, Denise Malicki
 Michael Quigley
 <br><br>
 **Analysis Partners**<br>
-Marc Suchard, UCLA<br><br>
-Lauren Gardner, Johns Hopkins<br><br>
-Philippe Lemey, KU Leuven<br><br>
-Alexander Watts & Kamran Khan, BlueDot<br><br>
+Marc Suchard, UCLA<br>
+Lauren Gardner, Johns Hopkins<br>
+Philippe Lemey, KU Leuven<br>
+Alexander Watts & Kamran Khan, BlueDot<br>
 Emma Hodcroft, Nextstrain
 
 <br><br>
