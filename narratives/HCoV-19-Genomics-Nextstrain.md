@@ -10,7 +10,9 @@ abstract: "To gain insights into the the emergence, spread, and transmission of 
 
 # [Summary](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/usa/sandiego?c=region&d=tree&legend=open&onlyPanels&p=full&sidebar=closed)
 
-We analyzed 3615 publicly available SARS-CoV-2 genomes from around the world. 185 of the sequences were sequenced by the SEARCH Alliance from samples collected from individuals in San Diego county between March 3rd and May 19th. In this report, we highlight the sequencing results and a few conclusions drawn from a maximum likelihood based phylodynamic analysis.  
+We analyzed 3615 publicly available SARS-CoV-2 genomes from around the world. 185 of the sequences were sequenced by the SEARCH Alliance from samples collected from individuals in San Diego county between March 3rd and May 19th. In this report, we highlight the sequencing results and a few conclusions drawn from a maximum likelihood based phylodynamic analysis.
+
+Get the most up-to-date information via our [project page on the Andersen Lab website](https://andersen-lab.com/secrets/data/hcov-19-genomics/).
 <br><br>
 **Table of Contents**:  
 1. [Data Generation](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=2).
