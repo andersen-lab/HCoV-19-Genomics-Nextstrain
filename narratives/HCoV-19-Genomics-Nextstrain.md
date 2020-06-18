@@ -59,7 +59,7 @@ We find that the clade on the right and in a majority of introductions across th
 <br><br>
 Combined, these early findings suggest that the ongoing epidemic in San Diego is the result of multiple independent introductions into the region, primarily sourced from other places in the United States.
 <br><br>
-As we continue to obtain more genomic information from San Diego and across the country, we will be able to gain more fine-grained information about source locations.
+As we continue to obtain more genomic information from San Diego and across the country, we will be able to gain more fine-grained information about source locations. Note, a current major limitation if the data is a lack of SARS-CoV-2 sequences from Mexico and more specifically from Baja. It is therefore impossible to see how the epidemic in San Diego may be linked to ongoing outbreaks further South.
 
 
 # [Introductions peaked in early March](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/usa/sandiego)
