@@ -13,13 +13,13 @@ abstract: "To gain insights into the the emergence, spread, and transmission of 
 We analyzed 3615 publicly available SARS-CoV-2 genomes from around the world. 185 of the sequences were sequenced by the SEARCH Alliance from samples collected from individuals in San Diego county between March 3rd and May 19th. In this report, we highlight the sequencing results and a few conclusions drawn from a maximum likelihood based phylodynamic analysis.  
 <br><br>
 **Table of Contents**:  
-1. [Data Generation](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=2).
-2. [Data Analysis](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=3).
-3. [Extensive introductions into San Diego County](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=4).
-3. [Persistent transmission chains are rare](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=5).
-4. [Majority of introductions are linked to European clades](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=6).
-5. [Introductions peaked in early March](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=7).
-6. [Scientific Credit](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=8).
+1. [Data Generation](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=2)
+2. [Data Analysis](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=3)
+3. [Extensive introductions into San Diego County](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=4)
+3. [Persistent transmission chains are rare](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=5)
+4. [Majority of introductions are linked to European clades](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=6)
+5. [Introductions peaked in early March](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=7)
+6. [Scientific Credit](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=8)
 
 
 # [Data Generation](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/usa/sandiego?c=region&d=tree&f_location=San%20Diego&legend=open&onlyPanels&p=full&sidebar=closed)
@@ -93,9 +93,13 @@ Michael Quigley
 <br><br>
 **Analysis Partners**<br>
 Marc Suchard, UCLA<br>
-Lauren Gardner, Johns Hopkins<br>
-Philippe Lemey, KU Leuven<br>
-Alexander Watts & Kamran Khan, BlueDot<br>
+<br>
+Lauren Gardner, Johns Hopkins
+<br>
+Philippe Lemey, KU Leuven
+<br>
+Alexander Watts & Kamran Khan, BlueDot
+<br>
 Emma Hodcroft, Nextstrain
 
 <br><br>
