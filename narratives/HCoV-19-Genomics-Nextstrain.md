@@ -2,10 +2,10 @@
 title: "Genomic Analysis of SARS-CoV-2 in San Diego"
 authors: "SEARCH-Alliance"
 authorLinks: "https://searchcovid.info/"
-affilitations: "Scripps Research, Rady Children's Insitute, UC San Diego"
+affilitations: "Scripps Research, Rady Children's Hospital, UC San Diego"
 date: "June 2020"
 dataset: "https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/usa/sandiego"
-abstract: "In order to slow the spread of COVID-19 in our community, the SEARCH Alliance is sequencing virus samples from healthcare workers and utilizing publicly available genomic data to track the spread and evolution of SARS-CoV-2."
+abstract: "To gain insights into the the emergence, spread, and transmission of COVID-19 in our community, the SEARCH Alliance is working with a large number of partners to sequence SARS-CoV-2 samples from infected patients."
 ---
 
 # [Summary](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/usa/sandiego?c=region&d=tree&legend=open&onlyPanels&p=full&sidebar=closed)
