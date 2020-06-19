@@ -91,9 +91,7 @@ Jenny Shin, David Pride
 Christina Clarke, Michelle Vanderpool, Teresa Mueller, Denise Malicki
 <br><br>
 **Scripps Health, San Diego**<br>
-Michael Quigley
-Ellen Stefanski
-Ian McHardy
+Michael Quigley, Ellen Stefanski, Ian McHardy
 <br><br>
 **Analysis Partners**<br>
 Marc Suchard, UCLA<br>
