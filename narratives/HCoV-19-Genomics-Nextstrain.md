@@ -63,7 +63,7 @@ As we continue to obtain more genomic information from San Diego and across the 
 
 
 # [Introductions peaked in early March](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/usa/sandiego)
-Lastly, we can estimate with the time-resolved phylogeny that the vast majority of introductions occured between late February and early March (Figure 1 to the right). On the graph, we can see that introductions start to occur around early February and consistently occured throughout March and into April. We can also see that while introductions did not stop, they do seem to have peaked in early March, coinciding with the state-wide stay-at-home order by Governor Newsom on March 19th, and the barring of entry to foreigh nationals on March 20th. Our sequences are also biased towards earlies samples, so we are likely missing later introductions into the region entirely. 
+Lastly, we can estimate with the time-resolved phylogeny that the vast majority of introductions occured between late February and early March (Figure 1 to the right). On the graph, we can see that introductions start to occur around early February and consistently occured throughout March and into April. We can also see that while introductions did not stop, they do seem to have peaked in early March, coinciding with the state-wide stay-at-home order by Governor Newsom on March 19th, and the barring of entry to foreigh nationals on March 20th. Our sequences are also biased towards earlier samples, so we are likely missing later introductions into the region entirely. 
 
 ```auspiceMainDisplayMarkdown
 <img src="https://raw.githubusercontent.com/andersen-lab/HCoV-19-Genomics-Nextstrain/master/img/introductions_filterd.png" alt="Introductions into San Diego">
@@ -92,6 +92,8 @@ Christina Clarke, Michelle Vanderpool, Teresa Mueller, Denise Malicki
 <br><br>
 **Scripps Health, San Diego**<br>
 Michael Quigley
+Ellen Stefanski
+Ian McHardy
 <br><br>
 **Analysis Partners**<br>
 Marc Suchard, UCLA<br>
