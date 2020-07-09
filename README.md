@@ -1,5 +1,5 @@
 ## About
-This is a [Nextstrain](https://nextstrain.org) build for novel coronavirus, alternatively know as hCoV-19 or SARS-CoV-2 that is responsible for the COVID-19 pandemic. This build will be visible at [the Andersen Lab website](https://andersen-lab.com/secrets/data/hcov-19-genomics/) and the accompaning narrative is available [here](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain) 
+This is a [Nextstrain](https://nextstrain.org) build for novel coronavirus, alternatively know as hCoV-19 or SARS-CoV-2 that is responsible for the COVID-19 pandemic. This build will be visible at [the Andersen Lab website](https://andersen-lab.com/secrets/data/hcov-19-genomics/) and the accompaning narrative is available [here](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain). 
 
 ### Data
 The hCoV-19 / SARS-CoV-2 genomes included in this build are those shared by GISAID and the [SEARCH-Alliance](https://searchcovid.info/). To access these sequences and see more information on how they have been produced, checkout [HCoV-19-Genomics](https://github.com/andersen-lab/HCoV-19-Genomics).
