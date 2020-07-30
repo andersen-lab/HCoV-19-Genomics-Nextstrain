@@ -43,7 +43,7 @@ Briefly, sequences and metadata were collected from both our repository and [GIS
 # [Tijuana outbreak arouse from European and North American clade](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/mexicoborder?branchLabel=clade&d=tree&f_search=Baja%20California&p=full&legend=closed&onlyPanels&sidebar=closed&c=search)
 The 39 newly generated sequences from Tijuana, highlighted in orange on the tree to the right, are the first sequences from Baja California and more than double the available sequences from Mexico. All samples were collected from individuals in Tijuana between March 25th and April 29th, 2020. 
 <br><br>
-All of the newly generated sequences fall within clade A2 which is characterized by the Spike-D614G substitution. This clade arouse in Europe, but has since become endemic in the USA and Canada. Since most of the San Diego and Imperial county sequences also fall within this clade, this finding is consistent with the outbreak in Tijuana being linked to the outbreaks in Southern California. The close proximity and magnitude of crossborder movement also support this idea.
+All of the newly generated sequences fall within clade A2 which is characterized by the Spike-D614G substitution. This clade arouse in Europe, but has since become endemic in the USA and Canada. Since most of the San Diego and Imperial county sequences also fall within this clade, this finding is consistent with the outbreak in Tijuana being linked to the outbreaks in Southern California. The two locations' close proximity, binational populations, and substantial crossborder movement also support this idea.
 <br><br>
 *Note: Clade labels Z1 and Z2 are not biologically relevent and are only included for visualization purposes.*
 
