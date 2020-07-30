@@ -11,7 +11,7 @@ abstract: "To gain insights into the the emergence, spread, and transmission of 
 # [Summary](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/mexicoborder?c=region&d=tree&legend=open&onlyPanels&p=full&sidebar=closed)
 
 We analyzed 4295 publicly available SARS-CoV-2 genomes from around the world to understand the USA-Mexico border's effect on the pandemic. 621 of the sequences were sequenced by the SEARCH Alliance from samples collected from individuals in San Diego county (508), Imperial county (74), and Tijuana (39). In this report, we highlight the sequencing results and a few conclusions drawn from a maximum likelihood based phylodynamic analysis.
-
+<br><br>
 Get the most up-to-date information via our [project page on the Andersen Lab website](https://andersen-lab.com/secrets/data/hcov-19-genomics/).
 <br><br>
 **Table of Contents**:  
@@ -49,13 +49,13 @@ All of the newly generated sequences fall within clade A2 which is characterized
 
 
 # [Evidence of multiple introductions into Tijuana](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/mexicoborder?branchLabel=clade&c=search&d=tree&f_search=Baja%20California&label=clade:Z2&m=div&onlyPanels&p=full&sidebar=closed)
-Zooming in to the subclade within A2 that contains the most Tijuana sequences, we can see that the Tijuana samples are quite dispersed and rarely cluster together. Similar to what we've seen in [San Diego](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=4), the outbreak in Tijuana was  seeded by a number of seperate introductions. Most of these introductions come from polytomies, where an ancestral node has multiple branches coming out of it, and thus the source is difficult to identify. 
+Zooming in to the subclade within A2 that contains the most Tijuana sequences, we can see that the Tijuana samples are quite dispersed and rarely cluster together. Similar to what we've seen in [San Diego](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=4), the outbreak in Tijuana was likely seeded by a numerous seperate introductions. Most of these introductions come from polytomies, where an ancestral node has multiple branches coming out of it, and thus the source is difficult to identify. 
 <br><br>
 While we know that there is a growing number of coronavirus cases in Baja California, it is difficult to determine whether this is driven by reintroductions from outside the state or sustained transmission within the state based on the genetic information. Tijuana sequences failing to cluster together would imply the former, but the small number of sequences and limited collection date range make it difficult to say anything conclusively. We are hoping to sequence more isolates from Baja California and Mexico to explore this further.
 
 
 # [Tijuana sequences are most similar to Southern California sequences](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/mexicoborder?c=search&d=tree&f_search=Arizona,Baja%20California,California,Imperial,Mexico,New%20Mexico,San%20Diego,Texas&label=clade:A2&p=full&onlyPanels&sidebar=closed)
-In the tree, none of the Tijuana sequences (Baja California sequences are colored in red) cluster with the 28 sequences from other locations in Mexico (colored in dark red) indicating that the situtation there, and perhaps along the entire border, is distinct from the rest of Mexico. Instead, Tijuana sequences cluster with the US border states. The vast majority specifically cluster with Southern California sequences (San Diego county sequences in blue, and Imperial county sequences in orange). The magnitude of northbound and southbound transmissions is difficult to assess, but movement across the US-Mexico border is evident and their is clear similarity between the San Diego and Tijuana outbreaks.
+In the tree, none of the Tijuana sequences (Baja California sequences are colored in red) cluster with the 28 sequences from other locations in Mexico (colored in dark red) indicating that the situtation there, and perhaps along the entire border, is distinct from the rest of Mexico. Instead, Tijuana sequences cluster with US border states. The vast majority specifically cluster with Southern California sequences (San Diego county sequences in blue, and Imperial county sequences in orange). The magnitude of northbound and southbound transmissions is difficult to assess, but movement across the US-Mexico border is evident and there is a clear similarity between the San Diego and Tijuana outbreaks.
 
 
 # [Scientific Credit](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/mexicoborder?c=region&d=map&label=clade:Z1&legend=closed&onlyPanels&p=full&sidebar=closed)
