@@ -18,12 +18,12 @@ Get the most up-to-date information via our [project page on the Andersen Lab we
 1. [Data Generation](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=2).
 2. [Data Analysis](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=3).
 3. [Tijuana outbreak arouse from domestic travel](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=4).
-3. [Evidence of multiple introductions into Tijuana](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=4).
-3. [Tijuana sequences clade with Souther California](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=4).
-
+4. [Evidence of multiple introductions into Tijuana](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=5).
+5. [Tijuana sequences clade with Souther California](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=6).
+6. [Scientific Credit](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=7).
 
 # [Data Generation](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/mexicoborder?c=search&d=map&f_search=Baja%20California,Imperial,Mexico,New%20Mexico,San%20Diego,Texas,Arizona&m=div&p=full&r=division&transmissions=hide&legend=open&onlyPanels&p=full&sidebar=closed)
-Sequences prepared by the SEARCH Alliance, highlighted to the right, were generated using an amplicon-based sequencing scheme using [PrimalSeq](https://www.nature.com/articles/nprot.2017.066) with the [ARTIC nCoV-2019 primer scheme](https://github.com/artic-network/artic-ncov2019/tree/master/primer_schemes/nCoV-2019).  
+Sequences prepared by the SEARCH Alliance were generated using an amplicon-based sequencing scheme using [PrimalSeq](https://www.nature.com/articles/nprot.2017.066) with the [ARTIC nCoV-2019 primer scheme](https://github.com/artic-network/artic-ncov2019/tree/master/primer_schemes/nCoV-2019).  
 <br><br>
 Nanopore data was processed using the [ARTIC-nCoV2019 pipeline](https://github.com/artic-network/artic-ncov2019) with [minimap2](https://github.com/lh3/minimap2) and [medaka](https://github.com/nanoporetech/medaka).  
 <br><br>
@@ -41,19 +41,21 @@ Briefly, sequences and metadata were collected from both our repository and [GIS
 
 
 # [Tijuana outbreak arouse from domestic travel](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/mexicoborder?branchLabel=clade&d=tree&f_search=Baja%20California&p=full&legend=closed&onlyPanels&sidebar=closed&c=search)
-The 39 newly generated sequences from Tijuana are the first sequences from Baja California and more than double the available sequences from Mexico. All samples were collected from individuals in Tijuana between March 25th and April 29th. All of the newly generated sequences fall within clade A2 which is characterized by the Spike-D614G substitution. This clade arouse in Europe, but has since become endemic in the USA and Canada, and implies that the outbreak in Tijuana was seeded by domestic introductions.
-
-*Note*: Clade labels Z1 and Z2 are not biologically relevent and are only included for visualization purposes.
+The 39 newly generated sequences from Tijuana, highlighted in orange on the tree to the right, are the first sequences from Baja California and more than double the available sequences from Mexico. All samples were collected from individuals in Tijuana between March 25th and April 29th, 2020. 
+<br><br>
+All of the newly generated sequences fall within clade A2 which is characterized by the Spike-D614G substitution. This clade arouse in Europe, but has since become endemic in the USA and Canada, and implies that the outbreak in Tijuana was seeded by domestic introductions.
+<br><br>
+*Note: Clade labels Z1 and Z2 are not biologically relevent and are only included for visualization purposes.*
 
 
 # [Evidence of multiple introductions into Tijuana](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/mexicoborder?branchLabel=clade&c=search&d=tree&f_search=Baja%20California&label=clade:Z2&m=div&onlyPanels&p=full&sidebar=closed)
 Zooming in to the subclade within A2 that contains the most Tijuana sequences, we can see that the sequences are quite dispersed and rarely cluster together. Similar to what we've seen in [San Diego](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain), the outbreak in Tijuana was  seeded by a number of seperate introductions. Most of these introductions come from polytomies, where an ancestral node has multiple branches coming out of it, and thus the source is difficult to identify. However relative to San Diego, the introductions come from fewer polytomies indicating that there is less diversity in the number of source locations. 
-
+<br><br>
 While we know that there is a growing number of coronavirus cases in Baja Californai, it is difficult to determine whether this is driven by reintroductions from outside the state or sustained transmission within the state based on the genetic information. Tijuana sequences failing to cluster together would imply the former, but the small number of sequences and limited collection date range make it difficult to say anything conclusively. We are hoping to sequence more isolates from Baja California and Mexico to explore this further.
 
 
 # [Tijuana sequences are most similar to Southern California sequences](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/mexicoborder?c=search&d=tree&f_search=Arizona,Baja%20California,California,Imperial,Mexico,New%20Mexico,San%20Diego,Texas&label=clade:A2&p=full&onlyPanels&sidebar=closed)
-In the tree to the right, we included contextual sequences from USA states that lie along the Mexican border. Interestingly, none of the Tijuana sequences (colored in red) cluster with the 28 sequences from other locations in Mexico indicating that the situtation there, and perhaps along the entire border, is distinct from the rest of Mexico. Instead, Tijuana sequences cluster with all of the US border states, however, the vast majority cluster with Southern California sequences (San Diego county sequences in blue, and Imperial county sequences in orange). The magnitude of northbound and southbound transmissions is difficult to assess, but movement across the US-Mexico border is evident and the similarity of the San Diego and Tijuana outbreaks is clear.
+In the tree to the right, we included contextual sequences from USA states that lie along the Mexican border. Interestingly, none of the Tijuana sequences (Baja California sequences are colored in red) cluster with the 28 sequences from other locations in Mexico indicating that the situtation there, and perhaps along the entire border, is distinct from the rest of Mexico. Instead, Tijuana sequences cluster with all of the US border states, however, the vast majority cluster with Southern California sequences (San Diego county sequences in blue, and Imperial county sequences in orange). The magnitude of northbound and southbound transmissions is difficult to assess, but movement across the US-Mexico border is evident and their is clear similarity between the San Diego and Tijuana outbreaks.
 
 
 # [Scientific Credit](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/mexicoborder?c=region&d=map&label=clade:Z1&legend=closed&onlyPanels&p=full&sidebar=closed)
@@ -76,7 +78,7 @@ Christina Clarke, Michelle Vanderpool, Teresa Mueller, Denise Malicki
 Michael Quigley, Ellen Stefanski, Ian McHardy
 <br><br>
 **Analysis Partners**<br>
-Marc Suchard, UCLA<br>
+Marc Suchard, UCLA
 <br>
 Lauren Gardner, Johns Hopkins
 <br>
