@@ -40,16 +40,16 @@ The pipeline used to generate this build is based on the [ncov pipeline](https:/
 Briefly, sequences and metadata were collected from both our repository and [GISAID](https://gisaid.org/). Genomes which were short, incomplete, too divergent, and/or had incomplete metadata were removed from the dataset. We aligned the remaining genomes to reference genome MN908947, and masked problematic sites, based on the following [post](https://virological.org/t/issues-with-sars-cov-2-sequencing-data/473), from the alignment. The alignment was then subsampled to provide context for sequences collected in Mexico and in border states (Arizona, California, New Mexico, and Texas) and to reduce the computational burden of the analysis. We then generated a phylogenetic tree from the alignment using [IQ-TREE](http://www.iqtree.org/) and a time-resolved phylogeny using [TreeTime](https://github.com/neherlab/treetime). Certain geographic traits and nucleotide substitutions were then reconstructed using [Augur](https://github.com/nextstrain/augur).  
 
 
-# [Tijuana outbreak arouse from domestic travel](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/mexicoborder?branchLabel=clade&d=tree&f_search=Baja%20California&p=full&legend=closed&onlyPanels&sidebar=closed&c=search)
+# [Tijuana outbreak arouse from European and North American clade](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/mexicoborder?branchLabel=clade&d=tree&f_search=Baja%20California&p=full&legend=closed&onlyPanels&sidebar=closed&c=search)
 The 39 newly generated sequences from Tijuana, highlighted in orange on the tree to the right, are the first sequences from Baja California and more than double the available sequences from Mexico. All samples were collected from individuals in Tijuana between March 25th and April 29th, 2020. 
 <br><br>
-All of the newly generated sequences fall within clade A2 which is characterized by the Spike-D614G substitution. This clade arouse in Europe, but has since become endemic in the USA and Canada, and implies that the outbreak in Tijuana was seeded by domestic introductions.
+All of the newly generated sequences fall within clade A2 which is characterized by the Spike-D614G substitution. This clade arouse in Europe, but has since become endemic in the USA and Canada. Since most of the San Diego and Imperial county sequences also fall within this clade, this finding is consistent with the outbreak in Tijuana being linked to the outbreaks in Southern California. The close proximity and magnitude of crossborder movement also support this idea.
 <br><br>
 *Note: Clade labels Z1 and Z2 are not biologically relevent and are only included for visualization purposes.*
 
 
 # [Evidence of multiple introductions into Tijuana](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/mexicoborder?branchLabel=clade&c=search&d=tree&f_search=Baja%20California&label=clade:Z2&m=div&onlyPanels&p=full&sidebar=closed)
-Zooming in to the subclade within A2 that contains the most Tijuana sequences, we can see that the Tijuana samples are quite dispersed and rarely cluster together. Similar to what we've seen in [San Diego](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain), the outbreak in Tijuana was  seeded by a number of seperate introductions. Most of these introductions come from polytomies, where an ancestral node has multiple branches coming out of it, and thus the source is difficult to identify. 
+Zooming in to the subclade within A2 that contains the most Tijuana sequences, we can see that the Tijuana samples are quite dispersed and rarely cluster together. Similar to what we've seen in [San Diego](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=4), the outbreak in Tijuana was  seeded by a number of seperate introductions. Most of these introductions come from polytomies, where an ancestral node has multiple branches coming out of it, and thus the source is difficult to identify. 
 <br><br>
 While we know that there is a growing number of coronavirus cases in Baja California, it is difficult to determine whether this is driven by reintroductions from outside the state or sustained transmission within the state based on the genetic information. Tijuana sequences failing to cluster together would imply the former, but the small number of sequences and limited collection date range make it difficult to say anything conclusively. We are hoping to sequence more isolates from Baja California and Mexico to explore this further.
 
@@ -76,6 +76,9 @@ Christina Clarke, Michelle Vanderpool, Teresa Mueller, Denise Malicki
 <br><br>
 **Scripps Health, San Diego**<br>
 Michael Quigley, Ellen Stefanski, Ian McHardy
+<br><br>
+**Infectolab, Tijuana**<br>
+Samuel Navarro, Carlos Cota
 <br><br>
 **Analysis Partners**<br>
 Marc Suchard, UCLA
