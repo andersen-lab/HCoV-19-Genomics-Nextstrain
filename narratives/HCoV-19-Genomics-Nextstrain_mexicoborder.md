@@ -17,7 +17,7 @@ Get the most up-to-date information via our [project page on the Andersen Lab we
 **Table of Contents**:  
 1. [Data Generation](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=2).
 2. [Data Analysis](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=3).
-3. [Tijuana outbreak arouse from domestic travel](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=4).
+3. [Tijuana outbreak arouse from European and North American clade](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=4).
 4. [Evidence of multiple introductions into Tijuana](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=5).
 5. [Tijuana sequences clade with Souther California](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=6).
 6. [Scientific Credit](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain?n=7).
