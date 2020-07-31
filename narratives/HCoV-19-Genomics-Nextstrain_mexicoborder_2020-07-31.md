@@ -15,12 +15,12 @@ We analyzed 4295 publicly available SARS-CoV-2 genomes from around the world to 
 Get the most up-to-date information via our [project page on the Andersen Lab website](https://andersen-lab.com/secrets/data/hcov-19-genomics/).
 <br><br>
 **Table of Contents**:  
-1. [Data Generation](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain/mexicoborder?n=2).
-2. [Data Analysis](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain/mexicoborder?n=3).
-3. [Tijuana outbreak linked with European and North American lineages](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain/mexicoborder?n=4).
-4. [Evidence of multiple introductions into Tijuana](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain/mexicoborder?n=5).
-5. [Tijuana sequences clade with Souther California](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain/mexicoborder?n=6).
-6. [Scientific Credit](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain/mexicoborder?n=7).
+1. [Data Generation](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain/mexicoborder/2020-07-31?n=2).
+2. [Data Analysis](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain/mexicoborder/2020-07-31?n=3).
+3. [Tijuana outbreak linked with European and North American lineages](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain/mexicoborder/2020-07-31?n=4).
+4. [Evidence of multiple introductions into Tijuana](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain/mexicoborder/2020-07-31?n=5).
+5. [Tijuana sequences clade with Souther California](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain/mexicoborder/2020-07-31?n=6).
+6. [Scientific Credit](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain/mexicoborder/2020-07-31?n=7).
 
 # [Data Generation](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/mexicoborder?c=search&d=map&f_search=Baja%20California,Imperial,Mexico,New%20Mexico,San%20Diego,Texas,Arizona&m=div&p=full&r=division&transmissions=hide&legend=open&onlyPanels&p=full&sidebar=closed)
 Sequences prepared by the SEARCH Alliance were generated using an amplicon-based sequencing scheme using [PrimalSeq](https://www.nature.com/articles/nprot.2017.066) with the [ARTIC nCoV-2019 primer scheme](https://github.com/artic-network/artic-ncov2019/tree/master/primer_schemes/nCoV-2019).  
