@@ -19,7 +19,7 @@ Get the most up-to-date information via our [project page on the Andersen Lab we
 2. [Data Analysis](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain/mexicoborder/2020-07-31?n=3).
 3. [Tijuana outbreak linked with European and North American lineages](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain/mexicoborder/2020-07-31?n=4).
 4. [Evidence of multiple introductions into Tijuana](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain/mexicoborder/2020-07-31?n=5).
-5. [Tijuana sequences clade with Souther California](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain/mexicoborder/2020-07-31?n=6).
+5. [Tijuana sequences cluster with Southern California](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain/mexicoborder/2020-07-31?n=6).
 6. [Scientific Credit](https://nextstrain.org/community/narratives/andersen-lab/HCoV-19-Genomics-Nextstrain/mexicoborder/2020-07-31?n=7).
 
 # [Data Generation](https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/mexicoborder?c=search&d=map&f_search=Baja%20California,Imperial,Mexico,New%20Mexico,San%20Diego,Texas,Arizona&m=div&p=full&r=division&transmissions=hide&legend=open&onlyPanels&p=full&sidebar=closed)
@@ -117,5 +117,3 @@ Emma Hodcroft, Nextstrain
 The Scripps Research Institute  
 La Jolla, CA, USA  
 [data@andersen-lab.com](mailto:data@andersen-lab.com).
-
-
