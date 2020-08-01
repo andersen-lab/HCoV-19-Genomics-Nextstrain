@@ -4,7 +4,7 @@ authors: "SEARCH-Alliance"
 authorLinks: "https://searchcovid.info/"
 affilitations: "Scripps Research, Rady Children's Hospital, UC San Diego"
 updated: "July 2020"
-dataset: "https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/mexicoborder"
+dataset: "https://nextstrain.org/community/andersen-lab/HCoV-19-Genomics-Nextstrain/hCoV-19/mexicoborder?lang=es"
 abstract: "To gain insights into the the emergence, spread, and transmission of COVID-19 in our community, the SEARCH Alliance is working with a large number of partners to sequence SARS-CoV-2 samples from infected patients."
 ---
 
