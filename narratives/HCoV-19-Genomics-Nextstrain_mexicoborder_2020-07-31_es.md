@@ -44,7 +44,7 @@ En resumen, se colectaron  secuencias y metadatos de nuestro repositorio y la ba
 Las 39 secuencias generadas de Tijuana, indicadas en amarillo en el arbol filogenético a la derecha, son las primeras secuencias obtenidas de Baja California, y representan mas del doble de las secuencias disponibles de México actualmente (representadas en color naranja). Todas las muestras fueron colectadas de pacientes de Tijuana entre Marzo 25 y Abril 29, 2020. 
 <br><br>
 Todas estas secuencias recién generadas se agrupan dentro del clado 20A (usando el [esquema de nomenclatura de Nextstrain](https://virological.org/t/year-letter-genetic-clade-naming-for-sars-cov-2-on-nextstrain-org/498)), el cual es caracterizado por la sustitución Spike-D614G. Este clado se originó en Europa, pero se ha vuelto endémico en los Estados Unidos y Canadá.
-
+<br><br>
 *Nota: Las etiquetas de los clados Z1 y Z2 no son relevantes biológicamente y están incluidos sólo con propósitos de visualización.*
 
 
